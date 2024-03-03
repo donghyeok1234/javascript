@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+    <style>
+        body{
+            margin: 0;
+        }
+
+        .top-nav{
+            background: lightgray;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            height: 55px;
+        }
+
+        .top-nav li{
+            display: inline-block;
+            margin-right: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            padding-right: 40px;
+        }
+
+        #top-logo{
+            margin: 0;
+            background: red;
+            padding: 15px;
+        }
+
+        .down-nav{
+            background: black;
+            width: 100%;
+            z-index: 5;
+            height: 0px;
+            visibility: visible;
+        }
+
+        .down-nav ul{
+            display: flex;
+            margin: 0;
+        }
+
+        .down-nav li{
+            display: inline-block;
+            margin-right: 12%;
+            font-size: 20px;
+            font-weight: 900;
+            color: white;
+        }
+
+        .down-nav-inner{
+            background: blue;
+            width: 100%;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 : 로고 -->
+    <div class="top-nav">
+        <h2 id="top-logo">로고</h2>
+        <ul>
+            <li>커피</li>
+            <li>라떼</li>
+            <li>주스</li>
+            <li>티</li>
+        </ul>
+    </div>
+
+    <div class="down-nav" id="down-nav">
+        <ul>
+            <li>커피</li>
+            <li>라떼</li>
+            <li>주스</li>
+            <li>티</li>
+        </ul>
+        <div class="down-nav-inner">
+            
+        </div>
+    </div>
+
+    <script>
+        var down_nav_flag = 0
+        document.getElementById('top-logo').addEventListener('click',function(){
+            if(down_nav_flag === 0){
+                down_nav_flag = 1
+                document.getElementById('down-nav').style.height = '150px'
+            }else if(down_nav_flag === 1){
+                down_nav_flag = 0
+                document.getElementById('down-nav').style.height = '0'
+            }
+        })
+    </script>
+</body>
+</html>
